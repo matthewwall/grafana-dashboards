@@ -1,0 +1,375 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_DATA",
+      "label": "data",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "influxdb",
+      "pluginName": "InfluxDB"
+    }
+  ],
+  "__elements": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "8.3.3"
+    },
+    {
+      "type": "datasource",
+      "id": "influxdb",
+      "name": "InfluxDB",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "iteration": 1640791267497,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "${DS_DATA}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "hidden",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "repeat": "channel",
+      "repeatDirection": "h",
+      "targets": [
+        {
+          "alias": "${channel}",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "${DS_DATA}"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "pitest.gem.${channel}_a_power_watt",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "title": "${channel}",
+      "type": "timeseries"
+    }
+  ],
+  "schemaVersion": 34,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "ch1",
+          "value": "ch1"
+        },
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "channel",
+        "options": [
+          {
+            "selected": true,
+            "text": "ch1",
+            "value": "ch1"
+          },
+          {
+            "selected": false,
+            "text": "ch2",
+            "value": "ch2"
+          },
+          {
+            "selected": false,
+            "text": "ch3",
+            "value": "ch3"
+          },
+          {
+            "selected": false,
+            "text": "ch4",
+            "value": "ch4"
+          },
+          {
+            "selected": false,
+            "text": "ch5",
+            "value": "ch5"
+          },
+          {
+            "selected": false,
+            "text": "ch6",
+            "value": "ch6"
+          },
+          {
+            "selected": false,
+            "text": "ch7",
+            "value": "ch7"
+          },
+          {
+            "selected": false,
+            "text": "ch8",
+            "value": "ch8"
+          },
+          {
+            "selected": false,
+            "text": "ch9",
+            "value": "ch9"
+          },
+          {
+            "selected": false,
+            "text": "ch10",
+            "value": "ch10"
+          },
+          {
+            "selected": false,
+            "text": "ch11",
+            "value": "ch11"
+          },
+          {
+            "selected": false,
+            "text": "ch12",
+            "value": "ch12"
+          },
+          {
+            "selected": false,
+            "text": "ch13",
+            "value": "ch13"
+          },
+          {
+            "selected": false,
+            "text": "ch14",
+            "value": "ch14"
+          },
+          {
+            "selected": false,
+            "text": "ch15",
+            "value": "ch15"
+          },
+          {
+            "selected": false,
+            "text": "ch16",
+            "value": "ch16"
+          },
+          {
+            "selected": false,
+            "text": "ch17",
+            "value": "ch17"
+          },
+          {
+            "selected": false,
+            "text": "ch18",
+            "value": "ch18"
+          },
+          {
+            "selected": false,
+            "text": "ch19",
+            "value": "ch19"
+          },
+          {
+            "selected": false,
+            "text": "ch20",
+            "value": "ch20"
+          },
+          {
+            "selected": false,
+            "text": "ch21",
+            "value": "ch21"
+          },
+          {
+            "selected": false,
+            "text": "ch22",
+            "value": "ch22"
+          },
+          {
+            "selected": false,
+            "text": "ch23",
+            "value": "ch23"
+          },
+          {
+            "selected": false,
+            "text": "ch24",
+            "value": "ch24"
+          },
+          {
+            "selected": false,
+            "text": "ch25",
+            "value": "ch25"
+          },
+          {
+            "selected": false,
+            "text": "ch26",
+            "value": "ch26"
+          },
+          {
+            "selected": false,
+            "text": "ch27",
+            "value": "ch27"
+          },
+          {
+            "selected": false,
+            "text": "ch28",
+            "value": "ch28"
+          },
+          {
+            "selected": false,
+            "text": "ch29",
+            "value": "ch29"
+          },
+          {
+            "selected": false,
+            "text": "ch30",
+            "value": "ch30"
+          },
+          {
+            "selected": false,
+            "text": "ch31",
+            "value": "ch31"
+          },
+          {
+            "selected": false,
+            "text": "ch32",
+            "value": "ch32"
+          }
+        ],
+        "query": "ch1,ch2,ch3,ch4,ch5,ch6,ch7,ch8,ch9,ch10,ch11,ch12,ch13,ch14,ch15,ch16,ch17,ch18,ch19,ch20,ch21,ch22,ch23,ch24,ch25,ch26,ch27,ch28,ch29,ch30,ch31,ch32",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "power-per-channel",
+  "uid": "t0BppZ07z",
+  "version": 3,
+  "weekStart": ""
+}
