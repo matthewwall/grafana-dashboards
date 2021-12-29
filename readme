@@ -1,0 +1,4 @@
+This repository contains grafana dashboards for various data collection and
+monitoring projects.  These are plain json with the identifier removed.  Some
+manipulation may be required to set the data source and variables to fit your
+environment.
